@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Noto+Sans+TC:wght@100..900&family=Poppins&display=swap");
+
+:root {
+  --primary-100: #f5fee7;
+  --primary-200: #E8FEC5;
+  --primary-300: #C0FA73;
+  --primary-400: #57a203;
+
+  --neutral-0: #ffffff;
+  --neutral-100: #f8f9fa;
+  --neutral-300: #dee2e6;
+  --neutral-500:#ADB5BD;
+  --neutral-600: #6c757d;
+  --neutral-900: #212529;
+
+  --danger-300:#D74F4F;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%; /* 將圖片大小限制在 container的大小中, 避免太大 */
+  height: auto; /* 避免圖片變形 */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* a:hover{
+    color: var(--primary-400);
+    text-decoration: underline;
+    text-underline-offset: 4px; 
+} */
+
+body {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: var(--neutral-900);
+}
+
+/* 通用樣式區塊 */
+
+.container {
+  width: 1296px;
+  margin: 0 auto;
+}
+
+/* <!-- 格線容器 範例樣式-->
+    <div class="row">
+        <!-- 欄位容器 -->
+        <div class="col">
+            <!-- container -->
+            <div class="container">
+                <!-- 每一張商品卡, 這樣就可以讓圖片只佔一個欄位的寬度 -->
+                 <!-- 由於設計稿中, 每一張圖片佔了兩個欄位的寬度, 因此 col 中會再將 width*2 -->
+                <div class="mb-12">
+                    <img src="" alt="">
+                    <p></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div> */
+
+/* 12欄位 通用樣式 */
+
+.row {
+  /* 設定父層容器的樣式*/
+  /* 由於每個 column 是以水平排列, 因此需要設定 flex 並允許排列 */
+  /* 因為padding 的設定, 因此要設定負的margin 避免兩側出現間距 */
+
+  display: flex; /* 允許內層元素水平排列 */
+  flex-wrap: wrap; /* 允許自動斷行 */
+  margin-right: -12px; /* 加上 避免 padding 的 負margin */
+  margin-left: -12px; /* 加上 避免 padding 的 負margin */
+}
+
+/* 將格線系統的欄位寬設定成通用樣式 */
+.col-2 {
+  /* 用欄位寬度的一半去設定 欄位間距*/
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 2);
+}
+
+.col-1 {
+  /* 這是給佔據一個欄位寬的 tag用 */
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12);
+}
+
+.col-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 3);
+}
+
+.col-4 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 4);
+}
+
+.col-5 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 5);
+}
+
+.col-6 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 6);
+}
+
+.col-7 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 7);
+}
+
+.col-8 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 8);
+}
+
+.col-9 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 9);
+}
+
+.col-10 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 10);
+}
+
+.col-11 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% / 12 * 11);
+}
+
+.col-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100%);
+}
+
+.d-flex {
+  /* flex 通用樣式可以先設定起來 */
+  display: flex;
+}
+
+.gap-8{
+  gap:8px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.h2{
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.h4 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.h5 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.h6 {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.text-sm {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* 文字顏色通用樣式 */
+
+.text-white {
+  color: var(--neutral-0);
+}
+
+.text-neutral-100 {
+  color: var(--neutral-100);
+}
+
+.text-neutral-400 {
+  color: var(--neutral-400);
+}
+
+.text-neutral-600 {
+  color: var(--neutral-600);
+}
+
+.text-primary-400 {
+  color: var(--primary-400);
+}
+
+
+.text-danger {
+  color: var(--danger-300);
+}
+
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+
+.bg-primary-200 {
+  background-color: var(--primary-200);
+}
+
+.bg-neutral-100 {
+  background-color: var(--neutral-100);
+}
+
+
+/* 間距樣式 */
+
+.py-12 {
+  padding: 12px;
+}
+
+.p-32 {
+  padding: 32px;
+}
+
+.py-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-12 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.py-24 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.py-32 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.py-48 {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.py-64 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.pb-4 {
+  padding-bottom: 4px;
+}
+
+.pb-48 {
+  padding-bottom: 48px;
+}
+
+.pr-8 {
+  padding-right: 8px;
+}
+
+.mt-12{
+  margin-top: 12px;
+}
+
+.mt-64{
+  margin-top: 64px;
+}
+
+.mr-8{
+  margin-right: 8px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mr-48 {
+  margin-right: 48px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.ml-8{
+  margin-left: 8px;
+}
+
+.pb-48 {
+  padding-bottom: 48px;
+}
+
+.pb-64 {
+  padding-bottom: 64px;
+}
+
+/* page */
+
+.header {
+  background-image: url(./img/Hero\ Section.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 152px 0;
+  text-align: center;
+}
+
+.quote {
+  border-radius: 12px;
+  text-align: center;
+}
+
+.intro img {
+  width: 1076px;
+  margin-left: -110px;
+  margin-right: -110px;
+}
+
+.section-lined {
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.history-desc {
+  border-left: 1px solid var(--neutral-900);
+  padding-left: 8px;
+}
+
+.history-list {
+  list-style: disc;
+  padding-left: 24px;
+}
+
+.concept-item {
+  padding-left: 12px;
+  border-left: 3px solid var(--neutral-300);
+}
+
+.bi {
+  padding-right: 8px;
+  vertical-align: bottom;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* 元件 */
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 12px;
+  color: var(--neutral-300);
+  font-weight: 700;
+}
+
+.breadcrumb-item {
+  display: flex;
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: var(--neutral-600);
+}
+
+.btn {
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.btn-light{
+  border:1px solid var(--neutral-900);
+}
+
+.btn-dark{
+  background: var(--neutral-900);
+  color: var(--neutral-0);
+}
+
+.text-align-center{
+  text-align: center;
+}
